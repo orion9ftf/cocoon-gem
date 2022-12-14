@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icon: MyString
+  url: MyString
+  social_networkable: one
+  social_networkable_type: Social networkable
+  description: MyText
+
+two:
+  icon: MyString
+  url: MyString
+  social_networkable: two
+  social_networkable_type: Social networkable
+  description: MyText

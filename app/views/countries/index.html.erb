@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Countries</h1>
+<% @countries.each do |country| %>
+    <p>Name: <%= country.name %>
+    <p>ISO: <%= country.iso %></p>
+    <p>Flag: <img src="<%= country.flag %>" alt="flag image"></p>
+    <p><%= link_to 'Show', country %> | <%= link_to 'Edit', edit_country_path(country) %> | <%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></p></p>
+
+  <div class="links float-right" style="margin-bottom: 30px;">
+    <%#= link_to_remove_association "remove task", f, class: 'btn btn-primary btn-xs' %>   
+  </div>
+
+
+<% end %>
+<br>
+
+<%= link_to 'New Country', new_country_path %>

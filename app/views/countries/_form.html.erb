@@ -1,0 +1,47 @@
+<%= form_for @country do |form| %>
+  <% if country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iso %>
+    <%= form.text_field :iso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flag %>
+    <%= form.file_field :flag %>
+  </div>
+<br />
+
+<hr>
+
+<h2>agregar redes sociales</h2>
+
+<div id="sociales">
+<%= form.fields_for :social_networks do |f| %>
+  <%= render 'countries/social_networks_fields', f: f %>
+<% end %>
+
+<div class="links">
+  <%= link_to_add_association 'add red social', form, :social_network,  partial: 'countries/social_networks_fields' %>
+</div>
+
+<hr>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

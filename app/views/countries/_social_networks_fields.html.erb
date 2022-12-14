@@ -1,0 +1,35 @@
+<div class="nested-fields">
+  <%#= form.fields_for :social_networks, @country.social_networks.build do |builder| %>
+    <%
+=begin%>
+ <%= builder.label :url %>
+    <%= builder.url_field :url %>
+
+    <%= builder.label :icon %>
+    <%= builder.file_field :icon %>
+
+    <%= builder.label :description %>
+    <%= builder.text_area :description %>
+
+    <%= link_to_remove_association "remove task", builder %> 
+<%
+=end%>
+  <%# end %>
+<div class="field">
+  <%#= form.fields_for :social_networks do |f| %>
+    <%= f.label :url %>
+    <%= f.url_field :url %>
+
+    <%= f.label :icon %>
+    <%= f.file_field :icon %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= link_to_remove_association "remove task", f %> 
+  <%# end %>
+</div>
+
+</div>
+
+

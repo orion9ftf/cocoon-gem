@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+
+<p>
+  <strong>Iso:</strong>
+  <%= @country.iso %>
+</p>
+
+<p>
+  <strong>Flag:</strong>
+  <%= @country.flag %>
+  <%#= image_tag @country.flag %>
+  <%#= image_tag @country.flag if @country.flag.attached? %>
+  <%#= image_tag (@country.flag), width: "150px", height: "100px" %>
+</p>
+
+<p>
+  <% @country.social_networks.each do |sociable| %>
+    <strong>icon:</strong>
+    <%= sociable.icon %>
+    <%#= image_tag sociable.icon %>
+    <%#= image_tag(sociable.icon) if sociable.icon.attached? %>
+    <%#= image_tag url_for(pro_near.icon.attachment) %>
+<br />
+    <strong>url:</strong>
+    <%= sociable.url %>
+<br />    
+    <strong>description:</strong>
+    <%= sociable.description %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>
